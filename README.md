@@ -53,7 +53,7 @@ Comecei declarando alguns estados com useState para poder gerencia-los de acordo
 ```
 Para a requisição get da API fornecida, utilizei o AXIOS e criei uma função assincrona, após a requisição ser realizada, setei os estados de acordo com a funcionalidade de cada um. Para que a função fosse executada apenas no primeiro Render, utilizei um useEffect para chama-la.
 
-----------------
+-------------
 ```
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,6 +74,8 @@ Para a requisição get da API fornecida, utilizei o AXIOS e criei uma função 
 
 Para a lógica do jogo em si, criei uma função para primeiro verificar se existe uma resposta digitada no input, e caso exista uma resposta, é executado o 'IF' verificando se a resposta digitada corresponde ao estado 'rightAnswer' que armazena o número recebido da API, caso a resposta esteja correta, o 'status' é setado para a mensagem "Você acertou" e o estado "started" para 'false', dessa forma é possível mostrar o botão para um novo jogo. Se o número for maior ou menor do que o valor retornado pela API, o status é setado para a mensagem "É maior" ou "É menor".
 
+-------------
+
 ```
           <p className={error ? "statusError" : "status"}>{status}</p>
           {status === ACERTO ? (
@@ -86,3 +88,5 @@ Para a lógica do jogo em si, criei uma função para primeiro verificar se exis
         <
 ```
 Para renderizar as mensagens com cores diferentes, de acordo com acerto, erro ou número maior e menor, utilizei If ternário para mudar a className de acordo com o estado atribuído a 'error' ou ao 'status', utilizando a mesma validação para mostrar o botão de nova partida e desabilitar o botão de envio, verificando se 'error' é verdadeiro ou se 'started' é falso.
+
+-------------
